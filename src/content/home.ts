@@ -1,0 +1,119 @@
+export const homeNavigationLinks = [
+  { label: 'Home', href: '#hero' },
+  { label: 'Portfolio', href: '#work' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+] as const;
+
+// icon keys map to the inline icon set in HomeClientStrip.tsx
+export const homeClientBrands = [
+  { name: 'Capsule', icon: 'sprintlab-assets/public/icons/home/brands/capsule.svg', muted: true },
+  { name: 'Hourglass', icon: 'sprintlab-assets/public/icons/home/brands/hourglass.svg', muted: false },
+  { name: 'Command+R', icon: 'sprintlab-assets/public/icons/home/brands/command-r.svg', muted: false },
+  { name: 'Sisyphus', icon: 'sprintlab-assets/public/icons/home/brands/sisyphus.svg', muted: false },
+  { name: 'Layers', icon: 'sprintlab-assets/public/icons/home/brands/layers.svg', muted: false },
+] as const;
+
+export const homeHeroStats = [
+  { value: '40+', label: 'Clients served' },
+  { value: '90%', label: 'Success score' },
+  { value: '10+', label: 'Years of expertise' },
+] as const;
+
+// Order + copy matches the "Featured projects" bento in the Figma file
+export const homeProjects = [
+  {
+    title: 'Balenciaga',
+    tag: 'Web Design • 2026',
+    tagline: '"It\u2019s different"',
+    imageAlt: 'Black Balenciaga hoodie product mockup',
+    imageSrc: 'sprintlab-assets/public/images/home/project-balenciaga.png',
+  },
+  {
+    title: 'Jamillee',
+    tag: 'Branding • 2026',
+    tagline: '"Be Unique"',
+    imageAlt: 'Pink cosmetic product mockup for Jamillee',
+    imageSrc: 'sprintlab-assets/public/images/home/project-jamillee.png',
+  },
+  {
+    title: 'Levi\u2019s',
+    tag: 'Software Development • 2026',
+    tagline: '"Quality never goes out of style"',
+    imageAlt: 'Dark denim jacket and sneaker product image for a Levis collection',
+    imageSrc: 'sprintlab-assets/public/images/home/project-levis.png',
+  },
+  {
+    title: 'Queen of Seduction',
+    tag: 'Branding • 2026',
+    tagline: '"Smell Unique"',
+    imageAlt: 'Luxury fragrance bottle mockup for a launch campaign',
+    imageSrc: 'sprintlab-assets/public/images/home/project-fragrance.png',
+  },
+] as const;
+
+export const homeServiceCards = [
+  {
+    number: '01',
+    title: 'Marketing',
+    description:
+      'Reach your ideal customers and grow your business with our tailored marketing solutions. Let us help you craft a powerful message and connect with your target audience.',
+    tone: 'light',
+  },
+  {
+    number: '02',
+    title: 'Web Design',
+    description:
+      'Your website is the virtual front door to your business. Let us create a stunning and user-friendly design that captivates your audience and drives conversions.',
+    tone: 'dark',
+  },
+  {
+    number: '03',
+    title: 'Branding',
+    description:
+      'Your brand is more than just a name or logo, it\u2019s a promise to your customers. Let us help you build a brand that communicates your values and resonates with your target audience.',
+    tone: 'light',
+  },
+  {
+    number: '04',
+    title: 'Web Development',
+    description:
+      'Transform your ideas into reality with our custom software development services. Our team of experts will bring your vision to life and create solutions that streamline your business processes.',
+    tone: 'dark',
+  },
+] as const;
+
+export const homeImpactMetrics = [
+  { value: '40+', label: 'Clients served' },
+  { value: '90%', label: 'Success score' },
+  { value: '10+', label: 'Years of expertise' },
+] as const;
+
+export const homeSocialLinks = [
+  { label: 'Instagram', href: 'https://instagram.com', icon: '/icons/home/instagram.svg' },
+  { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/icons/home/linkedin.svg' },
+  { label: 'X', href: 'https://x.com', icon: '/icons/home/x.svg' },
+] as const;
+
+export const homeFooterLinks = [
+  { label: 'About Us', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Portfolio', href: '#work' },
+] as const;
+
+export const homeAssetPaths = {
+  logo: 'sprintlab-assets/public/images/home/sprintLab-logo.svg',
+  logoWhite: 'sprintlab-assets/public/images/home/logo-wite.svg',
+  heroArtwork: 'sprintlab-assets/public/images/home/hero-artwork.png',
+  heroBackgroundArtwork: 'sprintlab-assets/public/images/home/hero-artwork.png',
+  storyPhoto: 'sprintlab-assets/public/images/home/team-story.jpg',
+  ctaArtwork: 'sprintlab-assets/public/images/home/cta-artwork.png',
+  footerMark: 'sprintlab-assets/public/images/home/logo-white.svg',
+  avatar1: 'sprintlab-assets/public/images/home/avatar-1.png',
+  avatar2: 'sprintlab-assets/public/images/home/avatar-2.png',
+  avatar3: 'sprintlab-assets/public/images/home/avatar-3.png',
+  avatar4: 'sprintlab-assets/public/images/home/avatar-4.png',
+  avatar5: 'sprintlab-assets/public/images/home/avatar-5.png',
+  arrowUpIcon: 'sprintlab-assets/public/icons/home/arrow-up.svg',
+  looper: 'sprintlab-assets/public/images/home/looper-1.svg',
+} as const;
