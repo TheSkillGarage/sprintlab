@@ -4,7 +4,7 @@
   color: #18212f;
   background: #f6f4ef;
   font-family:
-    Inter,
+    'IBM Plex Sans',
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -34,4 +34,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+/* Add to src/index.css (or wherever your global Tailwind stylesheet lives) */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* -50% because the track is the brand list duplicated 2x */
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
 }
