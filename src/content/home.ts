@@ -7,11 +7,11 @@ export const homeNavigationLinks = [
 
 // icon keys map to the inline icon set in HomeClientStrip.tsx
 export const homeClientBrands = [
-  { name: 'Capsule', icon: 'sprintlab-assets/public/icons/home/brands/capsule.svg', muted: true },
-  { name: 'Hourglass', icon: 'sprintlab-assets/public/icons/home/brands/hourglass.svg', muted: false },
-  { name: 'Command+R', icon: 'sprintlab-assets/public/icons/home/brands/command-r.svg', muted: false },
-  { name: 'Sisyphus', icon: 'sprintlab-assets/public/icons/home/brands/sisyphus.svg', muted: false },
-  { name: 'Layers', icon: 'sprintlab-assets/public/icons/home/brands/layers.svg', muted: false },
+  { name: 'Capsule', icon: 'public/icons/home/brands/capsule.svg', muted: true },
+  { name: 'Hourglass', icon: 'public/icons/home/brands/hourglass.svg', muted: false },
+  { name: 'Command+R', icon: 'public/icons/home/brands/command-r.svg', muted: false },
+  { name: 'Sisyphus', icon: 'public/icons/home/brands/sisyphus.svg', muted: false },
+  { name: 'Layers', icon: 'public/icons/home/brands/layers.svg', muted: false },
 ] as const;
 
 export const homeHeroStats = [
@@ -27,28 +27,28 @@ export const homeProjects = [
     tag: 'Web Design • 2026',
     tagline: '"It\u2019s different"',
     imageAlt: 'Black Balenciaga hoodie product mockup',
-    imageSrc: 'sprintlab-assets/public/images/home/project-balenciaga.png',
+    imageSrc: 'public/images/home/project-balenciaga.png',
   },
   {
     title: 'Jamillee',
     tag: 'Branding • 2026',
     tagline: '"Be Unique"',
     imageAlt: 'Pink cosmetic product mockup for Jamillee',
-    imageSrc: 'sprintlab-assets/public/images/home/project-jamillee.png',
+    imageSrc: '/public/images/home/project-jamillee.png',
   },
   {
     title: 'Levi\u2019s',
     tag: 'Software Development • 2026',
     tagline: '"Quality never goes out of style"',
     imageAlt: 'Dark denim jacket and sneaker product image for a Levis collection',
-    imageSrc: 'sprintlab-assets/public/images/home/project-levis.png',
+    imageSrc: 'public/images/home/project-levis.png',
   },
   {
     title: 'Queen of Seduction',
     tag: 'Branding • 2026',
     tagline: '"Smell Unique"',
     imageAlt: 'Luxury fragrance bottle mockup for a launch campaign',
-    imageSrc: 'sprintlab-assets/public/images/home/project-fragrance.png',
+    imageSrc: 'public/images/home/project-fragrance.png',
   },
 ] as const;
 
@@ -102,18 +102,18 @@ export const homeFooterLinks = [
 ] as const;
 
 export const homeAssetPaths = {
-  logo: 'sprintlab-assets/public/images/home/sprintLab-logo.svg',
-  logoWhite: 'sprintlab-assets/public/images/home/logo-wite.svg',
-  heroArtwork: 'sprintlab-assets/public/images/home/hero-artwork.png',
-  heroBackgroundArtwork: 'sprintlab-assets/public/images/home/hero-artwork.png',
-  storyPhoto: 'sprintlab-assets/public/images/home/team-story.jpg',
-  ctaArtwork: 'sprintlab-assets/public/images/home/cta-artwork.png',
-  footerMark: 'sprintlab-assets/public/images/home/logo-white.svg',
-  avatar1: 'sprintlab-assets/public/images/home/avatar-1.png',
-  avatar2: 'sprintlab-assets/public/images/home/avatar-2.png',
-  avatar3: 'sprintlab-assets/public/images/home/avatar-3.png',
-  avatar4: 'sprintlab-assets/public/images/home/avatar-4.png',
-  avatar5: 'sprintlab-assets/public/images/home/avatar-5.png',
-  arrowUpIcon: 'sprintlab-assets/public/icons/home/arrow-up.svg',
-  looper: 'sprintlab-assets/public/images/home/looper-1.svg',
+  logo: 'public/images/home/sprintLab-logo.svg',
+  logoWhite: 'public/images/home/logo-white.svg',
+  heroArtwork: 'public/images/home/hero-artwork.png',
+  heroBackgroundArtwork: 'public/images/home/hero-artwork.png',
+  storyPhoto: 'public/images/home/team-story.jpg',
+  ctaArtwork: 'public/images/home/cta-artwork.png',
+  footerMark: 'public/images/home/logo-white.svg',
+  avatar1: 'public/images/home/avatar-1.png',
+  avatar2: 'public/images/home/avatar-2.png',
+  avatar3: 'public/images/home/avatar-3.png',
+  avatar4: 'public/images/home/avatar-4.png',
+  avatar5: 'public/images/home/avatar-5.png',
+  arrowUpIcon: 'public/icons/home/arrow-up.svg',
+  looper: 'public/images/home/looper-1.svg',
 } as const;
