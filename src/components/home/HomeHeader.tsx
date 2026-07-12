@@ -22,7 +22,7 @@ export function HomeHeader() {
       <div className="relative z-50 mx-auto flex max-w-[1440px] items-center justify-between px-4 py-8 md:px-[70px]">
         <a
           className="inline-flex items-center"
-          href="#hero"
+          href="#"
           aria-label="SprintLab Digital home"
           onClick={() => setMenuOpen(false)}
         >

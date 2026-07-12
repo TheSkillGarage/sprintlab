@@ -115,4 +115,5 @@ export const homeAssetPaths = {
   avatar4: 'sprintlab-assets/public/images/home/avatar-4.png',
   avatar5: 'sprintlab-assets/public/images/home/avatar-5.png',
   arrowUpIcon: 'sprintlab-assets/public/icons/home/arrow-up.svg',
+  looper: 'sprintlab-assets/public/images/home/looper-1.svg',
 } as const;

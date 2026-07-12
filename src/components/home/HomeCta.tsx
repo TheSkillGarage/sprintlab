@@ -1,37 +1,60 @@
-import { Button } from '../ui';
-import { AdaptiveImage } from './AdaptiveImage';
 import { homeAssetPaths } from '../../content/home';
+
+function Sparkle({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M12 2c.6 4.2 1.8 5.4 6 6-4.2.6-5.4 1.8-6 6-.6-4.2-1.8-5.4-6-6 4.2-.6 5.4-1.8 6-6Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
 
 export function HomeCta() {
   return (
-    <section className="border-b border-white/70 bg-[#f8f6f2] py-16 sm:py-20" id="contact">
-      <div className="mx-auto w-[min(1120px,calc(100%-32px))]">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#5d39b6] px-6 py-12 text-center text-white sm:px-10 sm:py-16">
-          <div className="absolute inset-0 opacity-30">
-            <AdaptiveImage
-              alt="Decorative abstract background for the call to action"
-              className="h-full w-full object-cover"
-              fallbackClassName="min-h-full rounded-none border-0"
-              fallbackLabel="Add a CTA background asset in public/images/home if you want a richer visual here."
-              src={homeAssetPaths.ctaArtwork}
-            />
-          </div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,196,153,0.18),transparent_24%)]" />
+    <section className="bg-white pb-16 pt-4 sm:pb-20" id="contact">
+      <div className="mx-auto w-[min(1440px,calc(100%-32px))] md:px-[70px]">
+        <div className="relative overflow-hidden rounded-[1.5rem] bg-[#5B3FA6] px-6 py-16 text-center text-white sm:rounded-[2rem] sm:px-10 sm:py-24">
+          {/* Looper line-swirl artwork, matching the reference exactly */}
+          <img
+            src={homeAssetPaths.looper}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 w-[140%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-40 sm:w-[90%]"
+          />
+
+          <Sparkle className="absolute left-8 top-10 size-5 text-white/70 sm:left-14 sm:top-14 sm:size-6" />
+          <Sparkle className="absolute bottom-10 right-8 size-6 text-white/60 sm:bottom-14 sm:right-14 sm:size-7" />
+
           <div className="relative mx-auto max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-white/70">
-              Ready to work with us?
-            </p>
-            <h2 className="mt-5 text-[clamp(2.4rem,6vw,4.5rem)] font-black leading-tight">
-              Ready to work with us?
+            <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold leading-tight">
+              Ready to
+              <br />
+              work with us<span className="text-[#C7BAEF]">?</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-white/78 sm:text-lg">
-              If you want the page to mirror the screenshot more closely, drop the final images
-              into public/images/home and update the path map in src/content/home.ts.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Button href="mailto:hello@sprintlab.com" size="lg" variant="secondary">
-                Start a project
-              </Button>
+
+            <div className="mt-8 flex text-[#5838AF] justify-center sm:mt-10">
+              <a
+                href="mailto:hello@sprintlabdigital.com"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F6D9C8] px-6 py-4 text-sm font-bold text-[#5838AF] transition hover:bg-[#f0ccb6] sm:px-8"
+              >
+                Start a Project
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M17 7H8M17 7v9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
