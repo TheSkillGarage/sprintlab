@@ -5,13 +5,12 @@ export const homeNavigationLinks = [
   { label: 'Contact', href: '#contact' },
 ] as const;
 
-// icon keys map to the inline icon set in HomeClientStrip.tsx
 export const homeClientBrands = [
-  { name: 'Capsule', icon: 'public/icons/home/brands/capsule.svg', muted: true },
-  { name: 'Hourglass', icon: 'public/icons/home/brands/hourglass.svg', muted: false },
-  { name: 'Command+R', icon: 'public/icons/home/brands/command-r.svg', muted: false },
-  { name: 'Sisyphus', icon: 'public/icons/home/brands/sisyphus.svg', muted: false },
-  { name: 'Layers', icon: 'public/icons/home/brands/layers.svg', muted: false },
+  { name: 'Capsule', icon: '/icons/home/brands/capsule.svg', muted: true },
+  { name: 'Hourglass', icon: '/icons/home/brands/hourglass.svg', muted: false },
+  { name: 'Command+R', icon: '/icons/home/brands/command-r.svg', muted: false },
+  { name: 'Sisyphus', icon: '/icons/home/brands/sisyphus.svg', muted: false },
+  { name: 'Layers', icon: '/icons/home/brands/layers.svg', muted: false },
 ] as const;
 
 export const homeHeroStats = [
@@ -20,35 +19,34 @@ export const homeHeroStats = [
   { value: '10+', label: 'Years of expertise' },
 ] as const;
 
-// Order + copy matches the "Featured projects" bento in the Figma file
 export const homeProjects = [
   {
     title: 'Balenciaga',
     tag: 'Web Design • 2026',
     tagline: '"It\u2019s different"',
     imageAlt: 'Black Balenciaga hoodie product mockup',
-    imageSrc: 'public/images/home/project-balenciaga.png',
+    imageSrc: '/images/home/project-balenciaga.png',
   },
   {
     title: 'Jamillee',
     tag: 'Branding • 2026',
     tagline: '"Be Unique"',
     imageAlt: 'Pink cosmetic product mockup for Jamillee',
-    imageSrc: '/public/images/home/project-jamillee.png',
+    imageSrc: '/images/home/project-jamillee.png',
   },
   {
     title: 'Levi\u2019s',
     tag: 'Software Development • 2026',
     tagline: '"Quality never goes out of style"',
     imageAlt: 'Dark denim jacket and sneaker product image for a Levis collection',
-    imageSrc: 'public/images/home/project-levis.png',
+    imageSrc: '/images/home/project-levis.png',
   },
   {
     title: 'Queen of Seduction',
     tag: 'Branding • 2026',
     tagline: '"Smell Unique"',
     imageAlt: 'Luxury fragrance bottle mockup for a launch campaign',
-    imageSrc: 'public/images/home/project-fragrance.png',
+    imageSrc: '/images/home/project-fragrance.png',
   },
 ] as const;
 
@@ -102,18 +100,18 @@ export const homeFooterLinks = [
 ] as const;
 
 export const homeAssetPaths = {
-  logo: 'public/images/home/sprintLab-logo.svg',
-  logoWhite: 'public/images/home/logo-white.svg',
-  heroArtwork: 'public/images/home/hero-artwork.png',
-  heroBackgroundArtwork: 'public/images/home/hero-artwork.png',
-  storyPhoto: 'public/images/home/team-story.jpg',
-  ctaArtwork: 'public/images/home/cta-artwork.png',
-  footerMark: 'public/images/home/logo-white.svg',
-  avatar1: 'public/images/home/avatar-1.png',
-  avatar2: 'public/images/home/avatar-2.png',
-  avatar3: 'public/images/home/avatar-3.png',
-  avatar4: 'public/images/home/avatar-4.png',
-  avatar5: 'public/images/home/avatar-5.png',
-  arrowUpIcon: 'public/icons/home/arrow-up.svg',
-  looper: 'public/images/home/looper-1.svg',
+  logo: '/images/home/sprintLab-logo.svg',
+  logoWhite: '/images/home/logo-wite.svg',
+  heroArtwork: '/images/home/hero-artwork.png',
+  heroBackgroundArtwork: '/images/home/hero-artwork.png',
+  storyPhoto: '/images/home/team-story.jpg',
+  ctaArtwork: '/images/home/cta-artwork.png',
+  footerMark: '/images/home/logo-wite.svg',
+  avatar1: '/images/home/avatar-1.png',
+  avatar2: '/images/home/avatar-2.png',
+  avatar3: '/images/home/avatar-3.png',
+  avatar4: '/images/home/avatar-4.png',
+  avatar5: '/images/home/avatar-5.png',
+  arrowUpIcon: '/icons/home/arrow-up.svg',
+  looper: '/images/home/looper-1.svg',
 } as const;
