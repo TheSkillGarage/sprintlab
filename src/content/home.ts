@@ -113,5 +113,5 @@ export const homeAssetPaths = {
   avatar4: '/images/home/avatar-4.png',
   avatar5: '/images/home/avatar-5.png',
   arrowUpIcon: '/icons/home/arrow-up.svg',
-  looper: '/images/home/looper-1.svg',
+  looper: '/images/home/Looper-1.svg',
 } as const;
