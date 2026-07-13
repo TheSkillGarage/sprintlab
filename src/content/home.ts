@@ -1,6 +1,6 @@
 export const homeNavigationLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Portfolio', href: '#work' },
+  { label: 'Home', href: '/' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ] as const;
@@ -88,7 +88,11 @@ export const homeImpactMetrics = [
 ] as const;
 
 export const homeSocialLinks = [
-  { label: 'Instagram', href: 'https://instagram.com', icon: '/icons/home/instagram.svg' },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com',
+    icon: '/icons/home/instagram.svg',
+  },
   { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/icons/home/linkedin.svg' },
   { label: 'X', href: 'https://x.com', icon: '/icons/home/x.svg' },
 ] as const;
