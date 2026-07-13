@@ -1,8 +1,5 @@
 import {
-  HomeCta,
   HomeClientStrip,
-  HomeFooter,
-  HomeHeader,
   HomeHero,
   HomeProjects,
   HomeServices,
@@ -18,8 +15,6 @@ export function HomePage() {
         <HomeStory />
         <HomeProjects />
         <HomeServices />
-
-        {/* <HomeFooter /> */}
       </main>
     </>
   );
