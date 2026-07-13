@@ -2,17 +2,15 @@ import { LogoWhite, InstagramIcon, LinkedInIcon, XIcon } from '../asset';
 
 export function Footer() {
   return (
-    <div className="bg-white pt-[112px] pb-[43px]">
+    <div className="bg-white pt-[112px] pb-[43px] ">
       <footer className="bg-black text-white rounded-3xl p-10 sm:p-14 md:p-16 lg:p-[70px] mx-6 flex flex-col items-center justify-between shadow-2xl">
-        <div className="w-full max-w-[1400px] flex flex-col">
-          {/* Top Section */}
+        <div className="w-full lg:max-w-[1250px] flex flex-col">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-y-6 md:gap-y-0 w-full">
             {/* Column 1 */}
             <div className="flex flex-col gap-1 text-[11px] lg:text-base text-white">
               <p className="font-bold text-white mb-3">Our Canada Office:</p>
               <p>123 Maple Street</p>
               <p>Toronto, Ontario, Canada</p>
-              {/* <p>Canada</p> */}
             </div>
 
             {/* Column 2 */}
@@ -23,7 +21,7 @@ export function Footer() {
               <a href="#" className="hover:text-white transition-colors">
                 Services
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/portfolio" className="hover:text-white transition-colors">
                 Portfolio
               </a>
             </div>
@@ -52,7 +50,11 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center items-center py-6 sm:py-10 w-full">
-            <img src={LogoWhite} alt="" className="w-full h-auto" />
+            <img
+              src={LogoWhite}
+              alt=""
+              className="w-full h-auto lg:w-[1250px] lg:h-[220px]"
+            />
           </div>
 
           <div className="flex justify-between items-center text-[11px] lg:text-base text-white w-full mt-4 gap-4">

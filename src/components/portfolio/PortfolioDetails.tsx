@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { projects } from '../../data/projects';
 import { MoveLeft } from 'lucide-react';
 
 export function PortfolioDetails() {
@@ -33,7 +33,7 @@ export function PortfolioDetails() {
           {/* Back Button */}
           <button
             onClick={handleBack}
-            className="flex items-center gap-2 text-sm text-primary-100 border border-primary-100 px-6 py-2 rounded-sm hover:text-slate-900 transition-colors mb-8 cursor-pointer"
+            className="flex items-center gap-2 text-sm text-primary-100 transition-colors mb-8 cursor-pointer"
           >
             <MoveLeft />
             Back
@@ -177,7 +177,7 @@ export function PortfolioDetails() {
             )}
           </div>
 
-          {/* Section 5: Video Player placeholder */}
+          {/* Section 5: Video Player */}
           {project.videoLink && (
             <div className="relative overflow-hidden rounded-[24px] mb-10 w-full h-[300px] md:h-[500px]">
               <iframe

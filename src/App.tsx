@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { PortfolioPage } from './pages/PortfolioPage';
-import { PortfolioDetails } from './components/PortfolioDetails';
+import { PortfolioDetails } from './components/portfolio/PortfolioDetails';
 import { PageLayout } from './components/layout/PageLayout';
 
 function App() {
