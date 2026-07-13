@@ -107,6 +107,7 @@ export const homeAssetPaths = {
   logo: '/images/home/sprintLab-logo.svg',
   logoWhite: '/images/home/logo-wite.svg',
   heroArtwork: '/images/home/hero-artwork.png',
+  heroArtworkMobile: '/images/home/artwork-mobile.png',
   heroBackgroundArtwork: '/images/home/hero-artwork.png',
   storyPhoto: '/images/home/team-story.jpg',
   ctaArtwork: '/images/home/cta-artwork.png',
