@@ -1,8 +1,8 @@
 export const homeNavigationLinks = [
   { label: 'Home', href: '#hero' },
-  { label: 'Portfolio', href: '#work' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const homeClientBrands = [
