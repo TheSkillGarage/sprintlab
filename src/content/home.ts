@@ -1,8 +1,8 @@
 export const homeNavigationLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Portfolio', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const homeClientBrands = [
@@ -71,9 +71,9 @@ export const homeSocialLinks = [
 ] as const;
 
 export const homeFooterLinks = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#work' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/portfolio' },
 ] as const;
 
 export const homeAssetPaths = {

@@ -15,10 +15,10 @@ export function Footer() {
 
             {/* Column 2 */}
             <div className="flex flex-col items-start gap-2 justify-self-end text-[11px] text-white md:items-center md:justify-self-auto lg:text-base">
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/about" className="transition-colors hover:text-white">
                 About Us
               </a>
-              <a href="#" className="transition-colors hover:text-white">
+              <a href="/#services" className="transition-colors hover:text-white">
                 Services
               </a>
               <a href="/portfolio" className="transition-colors hover:text-white">
