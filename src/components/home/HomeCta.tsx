@@ -37,7 +37,7 @@ export function HomeCta() {
 
         <div className="mt-8 flex justify-center text-[#5838AF] sm:mt-10">
           <a
-            href="mailto:hello@sprintlabdigital.com"
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-[#F6D9C8] px-6 py-4 text-sm font-bold text-[#5838AF] transition hover:bg-[#f0ccb6] sm:px-8"
           >
             Start a Project

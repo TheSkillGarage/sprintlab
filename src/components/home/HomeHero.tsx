@@ -148,7 +148,7 @@ export function HomeHero() {
                 </div>
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   aria-label="Start a project"
                   className="flex items-center justify-between rounded-3xl bg-[#F6D9C8] px-8 py-6 transition hover:bg-[#f0ccb6]"
                 >
@@ -198,7 +198,7 @@ export function HomeHero() {
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               aria-label="Start a project"
               className="flex w-full items-center justify-between rounded-3xl bg-[#F6D9C8] px-6 py-4 transition hover:bg-[#f0ccb6] sm:px-8 sm:py-6"
             >
