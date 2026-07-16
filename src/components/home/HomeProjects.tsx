@@ -1,7 +1,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { AdaptiveImage } from './AdaptiveImage';
-import { homeProjects } from '../../content/home';
+import { projects } from '../../data/projects';
+
+// Same source of truth as the Portfolio page and its detail pages — the
+// first 4 entries in data/projects.ts are what shows here, so home and
+// /portfolio can never drift out of sync on images/copy again.
+const homeProjects = projects.slice(0, 4).map((project) => ({
+  id: project.id,
+  title: project.title,
+  tag: `${project.category} • ${project.year}`,
+  tagline: project.quote,
+  imageAlt: `${project.title} project image`,
+  imageSrc: project.image,
+}));
 
 const EASE: [number, number, number, number] = [0, 0, 0.58, 1];
 
@@ -51,9 +64,14 @@ function ProjectCaption({ project }: { project: (typeof homeProjects)[number] })
 }
 
 function ViewAllProjectsLink({ className = '' }: { className?: string }) {
+  const navigate = useNavigate();
   return (
     <a
-      href="#contact"
+      href="/portfolio"
+      onClick={(event) => {
+        event.preventDefault();
+        navigate('/portfolio');
+      }}
       style={{ color: '#fff' }}
       className={`inline-flex items-center justify-center gap-3 rounded-full bg-[#5838AF] px-6 py-4 text-sm font-bold uppercase tracking-wide !text-white transition hover:bg-[#4c2f9c] ${className}`}
     >
@@ -74,6 +92,7 @@ function ViewAllProjectsLink({ className = '' }: { className?: string }) {
 }
 
 export function HomeProjects() {
+  const navigate = useNavigate();
   // Card 0 (the sidebar) is active by default — this is the true initial
   // state per the reference: sidebar at 400x600, Balenciaga (card 1) at
   // the 209x500 secondary size, everything else compact.
@@ -108,6 +127,7 @@ export function HomeProjects() {
             {homeProjects.map((project) => (
               <figure
                 key={project.title}
+                onClick={() => navigate(`/portfolio/${project.id}`)}
                 className="relative h-[26rem] w-[85%] shrink-0 cursor-pointer snap-center overflow-hidden rounded-b-[24px] bg-slate-100"
               >
                 <AdaptiveImage
@@ -195,6 +215,7 @@ export function HomeProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 onMouseEnter={() => setActive(cardIndex)}
+                onClick={() => navigate(`/portfolio/${project.id}`)}
                 animate={{ width: size.width, height: size.height }}
                 transition={{ duration: 0.3, ease: EASE }}
                 className="group relative shrink-0 cursor-pointer overflow-hidden rounded-b-[24px] bg-slate-100 shadow-[0_20px_50px_rgba(73,42,144,0.08)]"

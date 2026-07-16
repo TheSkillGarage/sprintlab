@@ -1,6 +1,6 @@
 export const homeNavigationLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Home', href: '#hero' },
+  { label: 'Portfolio', href: '#work' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ] as const;
@@ -19,36 +19,9 @@ export const homeHeroStats = [
   { value: '10+', label: 'Years of expertise' },
 ] as const;
 
-export const homeProjects = [
-  {
-    title: 'Balenciaga',
-    tag: 'Web Design • 2026',
-    tagline: '"It\u2019s different"',
-    imageAlt: 'Black Balenciaga hoodie product mockup',
-    imageSrc: '/images/home/project-balenciaga.png',
-  },
-  {
-    title: 'Jamillee',
-    tag: 'Branding • 2026',
-    tagline: '"Be Unique"',
-    imageAlt: 'Pink cosmetic product mockup for Jamillee',
-    imageSrc: '/images/home/project-jamillee.png',
-  },
-  {
-    title: 'Levi\u2019s',
-    tag: 'Software Development • 2026',
-    tagline: '"Quality never goes out of style"',
-    imageAlt: 'Dark denim jacket and sneaker product image for a Levis collection',
-    imageSrc: '/images/home/project-levis.png',
-  },
-  {
-    title: 'Queen of Seduction',
-    tag: 'Branding • 2026',
-    tagline: '"Smell Unique"',
-    imageAlt: 'Luxury fragrance bottle mockup for a launch campaign',
-    imageSrc: '/images/home/project-fragrance.png',
-  },
-] as const;
+// Featured projects on the home page now come directly from data/projects.ts
+// (see HomeProjects.tsx) so home and /portfolio always show identical
+// images and content — no separate list to keep in sync here anymore.
 
 export const homeServiceCards = [
   {
@@ -107,7 +80,7 @@ export const homeAssetPaths = {
   logo: '/images/home/sprintLab-logo.svg',
   logoWhite: '/images/home/logo-wite.svg',
   heroArtwork: '/images/home/hero-artwork.png',
-  heroArtworkMobile: '/images/home/artwork-mobile.png',
+  heroArtworkMobile: '/images/home/hero-artwork-mobile.png',
   heroBackgroundArtwork: '/images/home/hero-artwork.png',
   storyPhoto: '/images/home/team-story.jpg',
   ctaArtwork: '/images/home/cta-artwork.png',
@@ -118,5 +91,5 @@ export const homeAssetPaths = {
   avatar4: '/images/home/avatar-4.png',
   avatar5: '/images/home/avatar-5.png',
   arrowUpIcon: '/icons/home/arrow-up.svg',
-  looper: '/images/home/Looper-1.svg',
+  looper: '/images/home/looper-1.svg',
 } as const;
