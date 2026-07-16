@@ -62,31 +62,16 @@ function RotatingHeadline() {
 
 const AVATARS = ['avatar1', 'avatar2', 'avatar3', 'avatar4', 'avatar5'] as const;
 
-// Header is ~108px tall (py-8 = 64px + ~44px logo/button row) at every
-// breakpoint since it doesn't scale with viewport. Hero below subtracts
-// that fixed amount from 100dvh so header + hero together never exceed one
-// screen — dvh (not vh) accounts for mobile browser chrome so this is
-// accurate on phones too, not just desktop.
-const HEADER_H = '108px';
-
 export function HomeHero() {
   return (
-    <section
-      className="relative overflow-hidden bg-[#F5F5FD]"
-      id="hero"
-      style={{ minHeight: `calc(100dvh - ${HEADER_H})` }}
-    >
-      <div
-        className="relative z-10 mx-auto flex flex-col justify-center pb-[2vh] pt-[2vh] sm:pb-[3vh]"
-        style={{ minHeight: `calc(100dvh - ${HEADER_H})` }}
-      >
-        {/* Font size now scales with viewport HEIGHT too (vh term in the
-            clamp), not just width — this is what stops it from ballooning
-            past the available vertical budget on short/wide screens. */}
-        <h1
-          className="mx-auto text-center font-bold leading-[1.05] tracking-tight text-[#442C86]"
-          style={{ fontSize: 'clamp(2.25rem, 4vw + 4vh, 7.25rem)' }}
-        >
+    // hero-fold / hero-fold-inner / hero-heading (defined in styles.css)
+    // apply the "fit within one viewport" sizing ONLY at the lg breakpoint
+    // and up — that requirement was for desktop, so mobile/tablet keep
+    // their natural, un-squeezed flow instead of being crushed to fit a
+    // dvh budget (which was clipping the button/artwork on phones).
+    <section className="relative overflow-hidden bg-[#F5F5FD] hero-fold" id="hero">
+      <div className="hero-fold-inner relative z-10 mx-auto flex flex-col pb-16 pt-8 sm:pb-20 lg:pt-10">
+        <h1 className="hero-heading mx-auto max-w-5xl p-4 text-center font-bold leading-[1.05] tracking-tight text-[#442C86]">
           <span className="block">We amplify your</span>
           <RotatingHeadline />
         </h1>
@@ -180,17 +165,17 @@ export function HomeHero() {
 
         {/*
           ============================================================
-          MOBILE/TABLET (below lg) - same structure as before; artwork
-          image now capped by max-height (vh-based) alongside its existing
-          width cap, and vertical gaps trimmed slightly, so the whole
-          stack (heading already sized above + card + button + artwork +
-          pill) fits calc(100dvh - header) on typical phone screens.
+          MOBILE/TABLET (below lg) - entirely separate markup, its own
+          dedicated artwork-mobile asset, and its own spacing. Deliberately
+          NOT constrained to the dvh fold budget (that's a desktop-only
+          requirement) — everything here uses normal, un-squeezed flow so
+          the button and full artwork are always visible, never clipped.
           ============================================================
         */}
-        <div className="flex flex-1 flex-col justify-center lg:hidden">
-          <div className="mx-auto flex w-full max-w-xl flex-col gap-2 px-4 sm:gap-3 sm:px-6">
-            <div className="w-full rounded-3xl bg-[#442C86] px-6 py-4 text-white sm:px-8 sm:py-6">
-              <p className="text-sm leading-[1.4] sm:text-lg">
+        <div className="lg:hidden">
+          <div className="mx-auto flex max-w-xl flex-col gap-3 px-4 sm:px-6">
+            <div className="w-full rounded-3xl bg-[#442C86] px-6 py-5 text-white sm:px-8 sm:py-6">
+              <p className="text-base leading-[1.5] sm:text-lg">
                 This is where creativity meets technology to elevate your business. From
                 web design and development to marketing and branding, we&apos;ve got you
                 covered.
@@ -200,12 +185,12 @@ export function HomeHero() {
             <a
               href="/contact"
               aria-label="Start a project"
-              className="flex w-full items-center justify-between rounded-3xl bg-[#F6D9C8] px-6 py-4 transition hover:bg-[#f0ccb6] sm:px-8 sm:py-6"
+              className="flex w-full items-center justify-between rounded-3xl bg-[#F6D9C8] px-6 py-5 transition hover:bg-[#f0ccb6] sm:px-8 sm:py-6"
             >
               <span className="text-sm font-semibold uppercase tracking-wide text-[#442C86] sm:text-lg">
                 Start a project
               </span>
-              <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[#442C86] text-white sm:size-10">
+              <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-[#442C86] text-white sm:size-10">
                 <svg
                   width="16"
                   height="16"
@@ -225,29 +210,34 @@ export function HomeHero() {
             </a>
           </div>
 
-          <div className="relative mt-4 sm:mt-8">
+          <div className="relative mt-8">
+            {/*
+              Normal-flow block (not position:absolute in a fixed-height
+              box), so the wrapper's height is dictated by the image's own
+              real rendered size and can never be clipped by an
+              overflow-hidden ancestor.
+            */}
             <img
               aria-hidden="true"
               alt=""
               src={homeAssetPaths.heroArtworkMobile}
-              className="mx-auto w-[75%] max-w-[420px] object-contain"
-              style={{ maxHeight: '32vh' }}
+              className="mx-auto w-[85%] max-w-[420px] object-contain"
             />
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-[#F5F5FD00] to-[#5B4793]/60" />
 
-            <div className="absolute inset-x-4 bottom-2 flex items-center gap-3 rounded-3xl border border-white/70 bg-white/10 px-4 py-2 backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:gap-6 sm:px-8 sm:py-6">
+            <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-3xl border border-white/70 bg-white/10 px-4 py-3 backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:gap-6 sm:px-8 sm:py-6">
               <div className="flex -space-x-3 rounded-full border border-[#C3BEF4] p-1.5 sm:p-2">
                 {AVATARS.map((key) => (
                   <img
                     key={key}
                     src={homeAssetPaths[key]}
                     alt=""
-                    className="size-6 rounded-full object-cover ring-2 ring-[#8A38F5]/10 sm:size-10"
+                    className="size-7 rounded-full object-cover ring-2 ring-[#8A38F5]/10 sm:size-10"
                   />
                 ))}
               </div>
-              <span className="text-xs text-white sm:text-lg">50+ satisfied clients</span>
+              <span className="text-sm text-white sm:text-lg">50+ satisfied clients</span>
             </div>
           </div>
         </div>
