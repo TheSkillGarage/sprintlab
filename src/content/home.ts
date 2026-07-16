@@ -80,7 +80,7 @@ export const homeAssetPaths = {
   logo: '/images/home/sprintLab-logo.svg',
   logoWhite: '/images/home/logo-wite.svg',
   heroArtwork: '/images/home/hero-artwork.png',
-  heroArtworkMobile: '/images/home/hero-artwork-mobile.png',
+  heroArtworkMobile: '/images/home/artwork-mobile.png',
   heroBackgroundArtwork: '/images/home/hero-artwork.png',
   storyPhoto: '/images/home/team-story.jpg',
   ctaArtwork: '/images/home/cta-artwork.png',
@@ -91,5 +91,5 @@ export const homeAssetPaths = {
   avatar4: '/images/home/avatar-4.png',
   avatar5: '/images/home/avatar-5.png',
   arrowUpIcon: '/icons/home/arrow-up.svg',
-  looper: '/images/home/looper-1.svg',
+  looper: '/images/home/Looper-1.svg',
 } as const;

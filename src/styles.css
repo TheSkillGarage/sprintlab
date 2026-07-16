@@ -6,6 +6,31 @@
   --color-grey-900: #363636;
 }
 
+/* Home hero: on mobile/tablet this sizes itself naturally (no vh math).
+   On desktop (>=1024px, matching Tailwind's `lg`) header + hero are kept
+   within one viewport — that's a desktop-only requirement, so it's gated
+   behind the media query instead of applying everywhere. */
+.hero-heading {
+  font-size: clamp(2.5rem, 9vw, 4.25rem);
+}
+
+@media (min-width: 1024px) {
+  .hero-fold {
+    min-height: calc(100dvh - 108px);
+  }
+
+  .hero-fold-inner {
+    min-height: calc(100dvh - 108px);
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-heading {
+    font-size: clamp(3.25rem, 4vw + 4vh, 7.25rem);
+  }
+}
+
 :root {
   color: #18212f;
   background: #f6f4ef;
