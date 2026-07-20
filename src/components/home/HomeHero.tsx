@@ -100,7 +100,7 @@ export function HomeHero() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#F5F5FD00] to-[#5B4793]" />
 
             <div
-              className="absolute inset-x-0 flex flex-col gap-4 p-4 sm:flex-row sm:items-end sm:justify-between sm:p-6"
+              className="absolute inset-x-0 mx-auto flex max-w-[1440px] flex-col gap-4 px-4 py-4 sm:flex-row sm:items-end sm:justify-between sm:py-6 md:px-[70px]"
               style={{ bottom: 'min(99px, 10vh)' }}
             >
               <div className="flex w-full max-w-[437px] items-center gap-6 rounded-3xl border border-white/70 bg-white/10 px-6 py-4 backdrop-blur-md sm:px-8 sm:py-6">
