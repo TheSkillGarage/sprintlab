@@ -102,8 +102,8 @@ export function Contact() {
         resolves before paint via useLayoutEffect, not useEffect.
       */}
       <section
-        className="flex flex-col items-center justify-center bg-[#F5F5FD] px-6 text-center sm:px-10"
-        style={{ minHeight: `calc(100dvh - ${headerHeight}px)` }}
+        className="flex flex-col items-center justify-center bg-[#F5F5FD] px-6 pb-14 text-center sm:px-10"
+        style={{ minHeight: `calc(80dvh - ${headerHeight}px)` }}
         id="contact-hero"
       >
         <h1
@@ -120,7 +120,7 @@ export function Contact() {
           <br />
           Help<span className="text-[#442C86]">?</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#442C86]/80 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-xl pb-4 sm:pb-0 text-base leading-7 text-[#442C86]/80 sm:text-lg">
           Whether you have a question, want to tell us about your project, or are
           interested in working together, we&apos;ll be happy to hear from you!
         </p>
