@@ -19,6 +19,7 @@ import Team3 from './Team3.svg';
 import Team4 from './Team4.svg';
 import Team5 from './Team5.svg';
 import Team6 from './Team6.svg';
+import AboutHero from './about-hero.svg';
 export {
   Background,
   LogoWhite,
@@ -41,4 +42,5 @@ export {
   Team4,
   Team5,
   Team6,
+  AboutHero,
 };
