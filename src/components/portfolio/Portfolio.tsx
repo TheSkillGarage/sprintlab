@@ -23,11 +23,24 @@ export function Portfolio() {
               to={`/portfolio/${project.id}`}
               className={`block relative overflow-hidden rounded-[24px] cursor-pointer group ${project.gridClass} border border-transparent`}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-[342px] md:h-[450px] object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:blur-md"
-              />
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="hidden md:block absolute inset-0 w-full h-full object-cover blur-2xl scale-110"
+                />
+                <picture className="relative block">
+                  {project.imageMobile && (
+                    <source media="(max-width: 767px)" srcSet={project.imageMobile} />
+                  )}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="relative w-full h-auto md:h-[450px] object-cover md:object-contain transition-all duration-500 group-hover:scale-105 md:group-hover:blur-md"
+                  />
+                </picture>
+              </div>
 
               <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute inset-0 bg-transparent md:bg-white/20 transition-colors duration-300" />

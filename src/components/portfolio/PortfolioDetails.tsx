@@ -40,11 +40,16 @@ export function PortfolioDetails() {
           </button>
           {/* Hero Image */}
           <div className="overflow-hidden rounded-[24px] mb-8 max-w-[1400px] mx-auto">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-[300px] md:h-[600px] object-cover"
-            />
+            <picture className="block">
+              {project.imageMobile && (
+                <source media="(max-width: 767px)" srcSet={project.imageMobile} />
+              )}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover"
+              />
+            </picture>
           </div>
 
           {/* Project Meta */}
@@ -112,46 +117,70 @@ export function PortfolioDetails() {
           {/* Section 1: Text only */}
           <div className="mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-4">
-              [Heading]
+              The Challenge
             </h2>
-            <p className="text-slate-600 leading-7">
-              {project.description[0] || 'Lorem ipsum dolor sit amet...'}
-            </p>
+            <div className="space-y-4">
+              {project.challenge.map((paragraph, index) => (
+                <p key={index} className="text-slate-600 leading-7">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
 
           {/* Section 2: Full width image */}
           {project.detailImages[0] && (
             <div className="overflow-hidden rounded-[24px] max-w-[1300px] mx-auto">
-              <img
-                src={project.detailImages[0]}
-                alt={`${project.title} detail 1`}
-                className="w-full h-[300px] md:h-[600px] object-cover"
-              />
+              <picture className="block">
+                {project.detailImagesMobile?.[0] && (
+                  <source
+                    media="(max-width: 767px)"
+                    srcSet={project.detailImagesMobile[0]}
+                  />
+                )}
+                <img
+                  src={project.detailImages[0]}
+                  alt={`${project.title} detail 1`}
+                  className="w-full h-auto object-cover"
+                />
+              </picture>
             </div>
           )}
 
           {/* Section 3: Split text and image */}
           <div className="my-[70px]">
             <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-4">
-              [Heading]
+              Our Approach & Solution
             </h2>
 
             {project.detailImages[1] && (
               <div className="md:float-right w-full md:w-[45%] lg:w-1/2 overflow-hidden rounded-[24px] mb-6 md:mb-4 md:ml-8 lg:ml-12 mt-2">
-                <img
-                  src={project.detailImages[1]}
-                  alt={`${project.title} detail 2`}
-                  className="w-full h-[300px] md:h-[350px] lg:h-[450px] object-cover"
-                />
+                <picture className="block">
+                  {project.detailImagesMobile?.[1] && (
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={project.detailImagesMobile[1]}
+                    />
+                  )}
+                  <img
+                    src={project.detailImages[1]}
+                    alt={`${project.title} detail 2`}
+                    className="w-full h-auto md:h-[350px] lg:h-[450px] object-cover"
+                  />
+                </picture>
               </div>
             )}
 
-            <p className="text-grey-800 leading-7">
-              {project.description[1] || 'Lorem ipsum dolor sit amet...'}
-            </p>
-            <p className="text-grey-800 mt-6 leading-7">
-              {project.description[1] || 'Lorem ipsum dolor sit amet...'}
-            </p>
+            {project.approach.map((paragraph, index) => (
+              <p
+                key={index}
+                className={
+                  index === 0 ? 'text-grey-800 leading-7' : 'text-grey-800 mt-6 leading-7'
+                }
+              >
+                {paragraph}
+              </p>
+            ))}
             <div className="clear-both"></div>
           </div>
 
@@ -159,20 +188,36 @@ export function PortfolioDetails() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[70px]">
             {project.detailImages[2] && (
               <div className="overflow-hidden rounded-[24px]">
-                <img
-                  src={project.detailImages[2]}
-                  alt={`${project.title} detail 3`}
-                  className="w-full h-auto md:h-[400px] object-cover"
-                />
+                <picture className="block">
+                  {project.detailImagesMobile?.[2] && (
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={project.detailImagesMobile[2]}
+                    />
+                  )}
+                  <img
+                    src={project.detailImages[2]}
+                    alt={`${project.title} detail 3`}
+                    className="w-full h-auto md:h-[400px] object-cover"
+                  />
+                </picture>
               </div>
             )}
             {project.detailImages[3] && (
               <div className="overflow-hidden rounded-[24px]">
-                <img
-                  src={project.detailImages[3]}
-                  alt={`${project.title} detail 4`}
-                  className="w-full h-auto md:h-[400px] object-cover"
-                />
+                <picture className="block">
+                  {project.detailImagesMobile?.[3] && (
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={project.detailImagesMobile[3]}
+                    />
+                  )}
+                  <img
+                    src={project.detailImages[3]}
+                    alt={`${project.title} detail 4`}
+                    className="w-full h-auto md:h-[400px] object-cover"
+                  />
+                </picture>
               </div>
             )}
           </div>
@@ -201,13 +246,18 @@ export function PortfolioDetails() {
           </p>
           <button
             onClick={handleNext}
-            className="relative overflow-hidden rounded-[24px] w-full aspect-[4/3] md:aspect-[16/7] cursor-pointer group text-left border border-transparent"
+            className="relative overflow-hidden rounded-[24px] w-full md:aspect-[16/7] cursor-pointer group text-left border border-transparent"
           >
-            <img
-              src={nextProject.image}
-              alt={nextProject.title}
-              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:blur-md"
-            />
+            <picture className="block">
+              {nextProject.imageMobile && (
+                <source media="(max-width: 767px)" srcSet={nextProject.imageMobile} />
+              )}
+              <img
+                src={nextProject.image}
+                alt={nextProject.title}
+                className="w-full h-auto md:h-full object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:blur-md"
+              />
+            </picture>
 
             <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute inset-0 bg-white/20 transition-colors duration-300" />
