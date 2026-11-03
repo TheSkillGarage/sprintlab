@@ -1,4 +1,4 @@
-import { LogoWhite, InstagramIcon, LinkedInIcon, XIcon } from '../asset';
+import { LogoWhite, LinkedInIcon } from '../asset';
 
 export function Footer() {
   return (
@@ -9,8 +9,11 @@ export function Footer() {
             {/* Column 1 */}
             <div className="flex flex-col gap-1 text-[11px] text-white lg:text-base">
               <p className="mb-3 font-bold text-white">Our Canada Office:</p>
-              <p>123 Maple Street</p>
-              <p>Toronto, Ontario, Canada</p>
+              <address className="not-italic">
+                <p>174 Darlingside Drive</p>
+                <p>M1E 3P6, Toronto, Ontario</p>
+                <p>Canada</p>
+              </address>
             </div>
 
             {/* Column 2 */}
@@ -29,17 +32,19 @@ export function Footer() {
             {/* Column 3 */}
             <div className="col-span-2 flex flex-col items-start gap-4 text-[11px] text-white md:col-span-1 md:items-end lg:text-base">
               <div className="mb-2 flex gap-1 text-white">
-                <a href="#" className="transition-opacity hover:opacity-80">
-                  <img src={InstagramIcon} alt="Instagram" />
-                </a>
-                <a href="#" className="transition-opacity hover:opacity-80">
-                  <img src={LinkedInIcon} alt="LinkedIn" />
-                </a>
-                <a href="#" className="transition-opacity hover:opacity-80">
-                  <img src={XIcon} alt="X" />
+                <a
+                  href="https://www.linkedin.com/company/sprintlabdigital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="SprintLab Digital on LinkedIn"
+                  className="transition-opacity hover:opacity-80"
+                >
+                  <img src={LinkedInIcon} alt="" />
                 </a>
               </div>
-              <p>+127 000 111 2222</p>
+              <a href="tel:+14373450501" className="transition-colors hover:text-white">
+                +1 (437) 345-0501
+              </a>
               <a
                 href="mailto:enquiries@sprintlabdigital.com"
                 className="transition-colors hover:text-white"

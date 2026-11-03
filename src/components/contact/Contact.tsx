@@ -16,6 +16,8 @@ const INITIAL_VALUES: ContactFormValues = {
   projectDetails: '',
 };
 
+const CONTACT_EMAIL = 'enquiries@sprintlabdigital.com';
+
 const FIELD_CLASSES =
   'w-full rounded-xl border border-transparent bg-[#3A3A3A] px-4 py-3 text-white placeholder:text-white/40 transition focus:border-[#8A38F5] focus:outline-none focus:ring-2 focus:ring-[#8A38F5]/30';
 
@@ -82,7 +84,22 @@ export function Contact() {
     event.preventDefault();
     setStatus('submitting');
 
-    // TODO: wire this up to the real submission endpoint once available.
+    const subject = `New project enquiry from ${values.name || 'website visitor'}`;
+    const body = [
+      `Name: ${values.name}`,
+      `Company: ${values.companyName}`,
+      `Phone: ${values.phoneNumber}`,
+      `Email: ${values.email}`,
+      '',
+      'Project details:',
+      values.projectDetails,
+    ].join('\n');
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
     window.setTimeout(() => {
       setStatus('submitted');
     }, 400);
@@ -133,11 +150,7 @@ export function Contact() {
             We would love to hear from you.
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-10 flex flex-col gap-6 sm:mt-12"
-            noValidate
-          >
+          <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-6 sm:mt-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <Field id="contact-name" label="Name">
                 <input

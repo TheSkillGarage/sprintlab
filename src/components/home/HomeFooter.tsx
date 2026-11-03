@@ -1,4 +1,4 @@
-import { homeNavigationLinks, homeAssetPaths } from '../../content/home';
+import { homeNavigationLinks } from '../../content/home';
 
 export function HomeFooter() {
   return (
@@ -10,9 +10,9 @@ export function HomeFooter() {
               Our Canada office
             </p>
             <address className="mt-4 not-italic leading-7 text-white/70">
-              123 Maple Street
+              174 Darlingside Drive
               <br />
-              Toronto, Ontario
+              M1E 3P6, Toronto, Ontario
               <br />
               Canada
             </address>
@@ -20,28 +20,34 @@ export function HomeFooter() {
 
           <nav aria-label="Footer navigation" className="grid gap-3 text-white/70">
             {homeNavigationLinks.map((link) => (
-              <a className="transition hover:text-white" href={link.href} key={link.label}>
+              <a
+                className="transition hover:text-white"
+                href={link.href}
+                key={link.label}
+              >
                 {link.label}
               </a>
             ))}
           </nav>
 
           <div className="grid gap-2 text-right text-white/70">
-            <a className="transition hover:text-white" href="tel:+1270001112222">
-              +1 270 001 12222
+            <a className="transition hover:text-white" href="tel:+14373450501">
+              +1 (437) 345-0501
             </a>
-            <a className="transition hover:text-white" href="mailto:hello@sprintlabdigital.com">
-              hello@sprintlabdigital.com
+            <a
+              className="transition hover:text-white"
+              href="mailto:enquiries@sprintlabdigital.com"
+            >
+              enquiries@sprintlabdigital.com
             </a>
-            <span className="text-xs text-white/40">
-              Footer mark path: {homeAssetPaths.footerMark}
-            </span>
           </div>
         </div>
 
         <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-4xl font-black tracking-tight sm:text-6xl">SprintLabDigital</p>
+            <p className="text-4xl font-black tracking-tight sm:text-6xl">
+              SprintLabDigital
+            </p>
             <p className="mt-2 text-sm text-white/45">© SprintLabDigital 2026</p>
           </div>
 
