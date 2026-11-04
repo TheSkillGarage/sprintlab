@@ -63,6 +63,29 @@ function ProjectCaption({ project }: { project: (typeof homeProjects)[number] })
   );
 }
 
+function ProjectImage({ project }: { project: (typeof homeProjects)[number] }) {
+  return (
+    <>
+      {/* Blurred backdrop fills the portrait card so the wide banner can be
+          shown in full with object-contain instead of being cropped. Same
+          treatment used on the Portfolio page. */}
+      <img
+        aria-hidden="true"
+        alt=""
+        className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl"
+        src={project.imageSrc}
+      />
+      <AdaptiveImage
+        alt={project.imageAlt}
+        className="relative h-full w-full object-contain"
+        fallbackClassName="relative h-full"
+        fallbackLabel={`Add the image for ${project.title} in public/images/home.`}
+        src={project.imageSrc}
+      />
+    </>
+  );
+}
+
 function ViewAllProjectsLink({ className = '' }: { className?: string }) {
   const navigate = useNavigate();
   return (
@@ -130,13 +153,7 @@ export function HomeProjects() {
                 onClick={() => navigate(`/portfolio/${project.id}`)}
                 className="relative h-[26rem] w-[85%] shrink-0 cursor-pointer snap-center overflow-hidden rounded-b-[24px] bg-slate-100"
               >
-                <AdaptiveImage
-                  alt={project.imageAlt}
-                  className="h-full w-full object-cover"
-                  fallbackClassName="h-full"
-                  fallbackLabel={`Add the image for ${project.title} in public/images/home.`}
-                  src={project.imageSrc}
-                />
+                <ProjectImage project={project} />
                 <span className="absolute left-4 top-4 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
                   {project.tag}
                 </span>
@@ -220,13 +237,7 @@ export function HomeProjects() {
                 transition={{ duration: 0.3, ease: EASE }}
                 className="group relative shrink-0 cursor-pointer overflow-hidden rounded-b-[24px] bg-slate-100 shadow-[0_20px_50px_rgba(73,42,144,0.08)]"
               >
-                <AdaptiveImage
-                  alt={project.imageAlt}
-                  className="h-full w-full object-cover"
-                  fallbackClassName="h-full"
-                  fallbackLabel={`Add the image for ${project.title} in public/images/home.`}
-                  src={project.imageSrc}
-                />
+                <ProjectImage project={project} />
 
                 <motion.span
                   initial={false}
